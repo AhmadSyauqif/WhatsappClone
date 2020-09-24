@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <!--region ActionBar Profile-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:theme="@style/ToolbarThemeDetail"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--endregion-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/dp150"
+        android:layout_height="@dimen/dp150"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintEnd_toEndOf="@+id/app_bar_profile"
+        app:layout_constraintStart_toStartOf="@+id/app_bar_profile"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_profile" />
+
+    <ImageButton
+        android:id="@+id/imbtn_profile"
+        style="@style/StandardImageButton"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        app:layout_constraintBottom_toBottomOf="@+id/img_profile"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile"
+        app:srcCompat="@drawable/ic_camera" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name_profile"
+        style="@style/StandardTextInput"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_profile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_name_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_name"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email_profile"
+        style="@style/StandardTextInput"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_name_profile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_phone_profile"
+        style="@style/StandardTextInput"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_email_profile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_phone_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_apply"
+        style="@style/StandardButton"
+        android:layout_marginTop="16dp"
+        android:text="Apply"
+        app:layout_constraintEnd_toEndOf="@+id/til_phone_profile"
+        app:layout_constraintStart_toStartOf="@+id/til_phone_profile"
+        app:layout_constraintTop_toBottomOf="@+id/til_phone_profile" />
+
+    <Button
+        android:id="@+id/btn_delete_account"
+        style="@style/WarningButton"
+        android:layout_marginTop="16dp"
+        android:text="DELETE Account"
+        app:layout_constraintEnd_toEndOf="@+id/btn_apply"
+        app:layout_constraintStart_toStartOf="@+id/btn_apply"
+        app:layout_constraintTop_toBottomOf="@+id/btn_apply" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/progress_layout_profile"
+        style="@style/ProgressLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
